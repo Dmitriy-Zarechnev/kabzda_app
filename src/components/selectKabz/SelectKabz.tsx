@@ -1,5 +1,5 @@
 import React from 'react'
-import classes from './SelectKabz.module.css'
+import S from './SelectKabz.module.css'
 
 export type ItemType = {
     title: string,
@@ -17,7 +17,7 @@ export const SelectKabz = (props: SelectPropsType) => {
     const selectedItem = props.items.find(i => i.value === props.value)
 
     return (
-        <div className={classes.select}>
+        <div className={S.select}>
             <select>
                 <option value='1'>Moscow</option>
                 <option value='2'>Lima</option>
