@@ -1,6 +1,6 @@
 import {Meta} from '@storybook/react'
 import {SelectKabz} from './SelectKabz'
-import {action} from '@storybook/addon-actions'
+import {useState} from 'react'
 
 
 const meta: Meta<typeof SelectKabz> = {
@@ -12,10 +12,12 @@ export default meta
 
 
 export const BaseSelectKabzExample = () => {
+    const [value, setValue] = useState('2')
+
     return (
         <SelectKabz
-            value={'2'}
-            onChange={action('Value changed')}
+            value={value}
+            onChange={setValue}
             items={[
                 {value: '1', title: 'Obninsk'},
                 {value: '2', title: 'Lima'},
@@ -26,9 +28,12 @@ export const BaseSelectKabzExample = () => {
 }
 
 export const WithoutValueSelect = () => {
+    const [value, setValue] = useState(null)
+
     return (
         <SelectKabz
-            onChange={action('Value changed')}
+            onChange={setValue}
+            value={value}
             items={[
                 {value: '1', title: 'Read'},
                 {value: '2', title: 'Write'},
