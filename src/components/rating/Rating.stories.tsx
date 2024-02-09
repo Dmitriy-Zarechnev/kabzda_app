@@ -32,6 +32,6 @@ export const Rating5 = () => {
 }
 
 export const ChangeRating = () => {
-    let [ratingValue, setRatingValue] = useState<RatingValueType>(0)
+    const [ratingValue, setRatingValue] = useState<RatingValueType>(0)
     return <Rating value={ratingValue} onClick={setRatingValue}/>
 }
