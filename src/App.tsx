@@ -1,6 +1,5 @@
 import React, {useState} from 'react'
 import S from './App.module.css'
-import {Select} from './components/select/Select'
 import {UnContrAccordion} from './components/accordion/UnContrAccordion'
 
 
