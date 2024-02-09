@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useReducer, useState} from 'react'
 
 type AccordionPropsType = {
     titleValue: string;
@@ -9,13 +9,33 @@ type AccordionTitlePropsType = {
     onClickCollapsedHandler: () => void
 }
 
+type ActionType = {
+    type: string
+}
+
+
+const reducer = (state: boolean, action: ActionType) => {
+    if (action.type === 'TOGGLE-COLLAPSED') {
+        return !state
+    }
+    return state
+}
+
+
 export const UnContrAccordion: React.FC<AccordionPropsType> = (props) => {
 
-    const [collapsed, setCollapsed] = useState(true)
+    // const [collapsed, setCollapsed] = useState(true)
+    const [collapsed, dispatch] = useReducer(reducer, false)
 
-    const onClickCollapsedHandler = () => {
+    /*const onClickCollapsedHandler = () => {
         setCollapsed(!collapsed)
     }
+
+     */
+    const onClickCollapsedHandler = () => {
+        dispatch({type: 'TOGGLE-COLLAPSED'})
+    }
+
 
     return (
         <div>
