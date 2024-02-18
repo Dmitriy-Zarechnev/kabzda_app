@@ -1,5 +1,5 @@
 import type {Meta} from '@storybook/react'
-import React, {useMemo, useState} from 'react'
+import React, {useCallback, useMemo, useState} from 'react'
 
 
 const meta: Meta = {
@@ -95,6 +95,55 @@ export const HelpsForReactMemo = () => {
 }
 
 
+export const LikeUseCallBack = () => {
+    console.log('LikeUseCallBack')
+    const [counter, setCounter] = useState(0)
+    const [books, setBooks] = useState(['JS', 'React', 'Redux', 'Vue'])
+
+    const newArray = useMemo(() => {
+        return books.filter(el => el.toLowerCase().indexOf('e') > -1)
+    }, [books])
+
+    const addBook = () => {
+        setBooks([...books, 'TeS'])
+    }
+
+    const memoAddBook = useMemo(() => {
+        return () => setBooks([...books, 'TeS'])
+    }, [books])
+
+
+    const memoAddBook2 = useCallback(() => {
+        setBooks([...books, 'TeS'])
+    }, [books])
+    return (
+        <>
+            <button onClick={() => {
+                setCounter(counter + 1)
+            }}>
+                +
+            </button>
+            {counter}
+            <Books books={newArray} addBook={memoAddBook2}/>
+        </>
+    )
+}
+
+const BooksSecret = (props: { books: Array<string>, addBook: () => void }) => {
+    console.log('Books Secret')
+    return (
+        <div>
+            <button onClick={props.addBook}>
+                Add Book
+            </button>
+            {props.books.map((el, i) => {
+                return <div key={i}>{el}</div>
+            })}
+        </div>
+    )
+}
+
+const Books = React.memo(BooksSecret)
 
 
 
