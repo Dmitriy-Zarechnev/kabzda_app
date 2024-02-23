@@ -18,6 +18,7 @@ export const SimpleExample = () => {
     // }
     useEffect(() => {
         console.log('UseEffect')
+        document.title = counter.toString()
     }, [])
 
 
@@ -29,3 +30,29 @@ export const SimpleExample = () => {
     )
 }
 
+
+export const TimeOutExample = () => {
+    console.log('TimeOutExample')
+    const [counter, setCounter] = useState(1)
+
+
+    useEffect(() => {
+        // console.log('UseEffect')
+        // setTimeout(() => {
+        //     document.title = counter.toString()
+        // }, 1000)
+
+        // setInterval(() => {
+        //     setCounter(state => state + 1)
+        // }, 1000)
+
+    }, [])
+
+
+    return (
+        <>
+            {/*<button onClick={() => setCounter(counter + 1)}>+</button>*/}
+            <h1>Hello {counter}</h1>
+        </>
+    )
+}
