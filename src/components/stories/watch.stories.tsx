@@ -36,9 +36,14 @@ export const Watch = () => {
 
 
     useEffect(() => {
-        setInterval(() => {
+        const intervalID = setInterval(() => {
             setSeconds(state => state + 1)
         }, 1000)
+
+
+        return () => {
+            clearInterval(intervalID)
+        }
     }, [])
 
 
