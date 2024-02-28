@@ -22,29 +22,6 @@
     align-items: center;
 }
 
-.block_box {
-    border: 2px solid #2ce80e;
-    border-radius: 5px;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-
-.block_header {
-    margin: 0;
-    font-size: 25px;
-    color: #607bdc;
-    text-decoration: underline;
-}
-
-.block_result {
-    font-size: 40px;
-    align-self: center;
-    color: #7a0ce0;
-}
-
 .dots {
     color: #607bdc;
     font-size: 60px;

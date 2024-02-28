@@ -1,0 +1,22 @@
+.block_box {
+    border: 2px solid #2ce80e;
+    border-radius: 5px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+.block_header {
+    margin: 0;
+    font-size: 25px;
+    color: #607bdc;
+    text-decoration: underline;
+}
+
+.block_result {
+    font-size: 40px;
+    color: #7a0ce0;
+}

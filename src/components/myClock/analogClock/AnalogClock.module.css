@@ -1,0 +1,6 @@
+.line {
+    border-bottom: 2px solid black;
+    width: 200px;
+    transform-origin: 0 0 ;
+    transform: rotate(45deg)
+}
