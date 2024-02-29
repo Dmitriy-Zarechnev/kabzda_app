@@ -6,7 +6,6 @@ import {DigitalClock} from './digitalClock/DigitalClock'
 type clockModeType = 'analog' | 'digit' | 'default'
 
 export const MyClock = React.memo(() => {
-
     const [date, setDate] = useState<Date>(new Date())
     const [clockType, setClockType] = useState<clockModeType>('default')
 
