@@ -21,15 +21,12 @@ export const MyClock = React.memo(() => {
         }
     }, [])
 
-    const onClickHandler = (type: clockModeType) => {
-        setClockType(type)
-    }
 
     return (
         <section className={S.watch}>
             <h1 className={S.header}>Watch Dogs</h1>
-            <button onClick={() => onClickHandler('analog')}>Analog</button>
-            <button onClick={() => onClickHandler('digit')}>Digit</button>
+            <button onClick={() => setClockType('analog')}>Analog</button>
+            <button onClick={() => setClockType('digit')}>Digit</button>
             {clockType === 'analog'
                 ? <AnalogClock date={date}/>
                 : clockType === 'digit'

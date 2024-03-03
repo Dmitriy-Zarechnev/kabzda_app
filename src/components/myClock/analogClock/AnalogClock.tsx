@@ -1,6 +1,6 @@
 import React, {CSSProperties} from 'react'
 
-export const AnalogClock = React.memo((props: { date: Date }) => {
+export const AnalogClock:React.FC<{ date: Date }> = React.memo(( { date }) => {
 
 
 // -----------  Свойства для часиков ----------
@@ -11,7 +11,7 @@ export const AnalogClock = React.memo((props: { date: Date }) => {
         width: '200px',
         borderBottom: '4px solid black',
         transformOrigin: '0 0',
-        transform: `rotate(${(props.date.getSeconds() * 6) - 90}deg) translate(0, -50%)`,
+        transform: `rotate(${(date.getSeconds() * 6) - 90}deg) translate(0, -50%)`,
         display: 'block',
         borderRadius: '5px'
     }
@@ -22,7 +22,7 @@ export const AnalogClock = React.memo((props: { date: Date }) => {
         width: '150px',
         borderBottom: '6px solid red',
         transformOrigin: '0 0',
-        transform: `rotate(${(props.date.getMinutes() * 6) - 90}deg) translate(0, -50%)`,
+        transform: `rotate(${(date.getMinutes() * 6) - 90}deg) translate(0, -50%)`,
         display: 'block',
         borderRadius: '5px'
     }
@@ -33,7 +33,7 @@ export const AnalogClock = React.memo((props: { date: Date }) => {
         width: '100px',
         borderBottom: '10px solid green',
         transformOrigin: '0 0',
-        transform: `rotate(${(props.date.getHours() * 30) - 90}deg) translate(0, -50%)`,
+        transform: `rotate(${(date.getHours() * 30) - 90}deg) translate(0, -50%)`,
         display: 'block',
         borderRadius: '5px'
     }
