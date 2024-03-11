@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React from 'react'
 import S from './App.module.css'
 import {UnContrAccordion} from './components/accordion/UnContrAccordion'
 
@@ -8,7 +8,7 @@ export type RatingValueType = 0 | 1 | 2 | 3 | 4 | 5
 function App() {
 
     // let [ratingValue, setRatingValue] = useState<RatingValueType>(0)
-    let [accordionCollapsed, setAccordionCollapsed] = useState<boolean>(false)
+    // let [accordionCollapsed, setAccordionCollapsed] = useState<boolean>(false)
      // let [changeColor, setChangeColor] = useState<boolean>(true)
 
     // const items = [
